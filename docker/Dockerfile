@@ -18,10 +18,11 @@ RUN echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" > ~/.p
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn -r requirements.txt
 
 #克隆Hugging Face仓库
-RUN  git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
+#RUN  git clone https://huggingface.co/FlagAlpha/Atom-7B-Chat
+RUN git clone https://huggingface.co/FlagAlpha/Llama2-Chinese-13b-Chat
 
 #开启7860端口
 EXPOSE 7860
 
 #设置启动命令
-ENTRYPOINT ["python", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Atom-7B-Chat/"]
+ENTRYPOINT ["python", "examples/chat_gradio.py", "--model_name_or_path", "/root/Llama2-Chinese/Llama2-Chinese-13b-Chat/"]
